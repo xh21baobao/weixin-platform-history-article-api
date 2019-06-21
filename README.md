@@ -1,7 +1,18 @@
 # WeChatPlatformArticle
 微信公众号历史文章爬取api
 
-#### example.py
+### 所需工具
+1、环境依赖：建议使用 python3
+2、请下载源码自行调试： git clone git@github.com:xzkzdx/WeChatPlatformArticle.git
+3、建议使用fiddler抓包工具，或手写类似fiddler代理转发的工具
+
+
+### 关于接口参数的获取
+1、使用fiddler抓包工具获取必要的请求参数例如：uin 与 key
+2、biz 也就是 __biz ，获取方式在公众号历史消息链接里，复制公众号历史消息的链接，找到&__biz=xxx==&中xxx==部分，样例代码给的是人民日报的__biz
+
+
+#### 样例：simple_example.py
 ```angular2
 
 from api import get_history_api

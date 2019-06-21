@@ -10,7 +10,7 @@ if __name__ == '__main__':
     # 每一个公众号公众号都存在的公开的__biz信息
     biz = "MjM5MjAxNDM4MA=="  # 人民日报的 __biz 信息，也可以记做 MjM5MjAxNDM4MA%3D%3D
     # 账号私密的uin信息，私密信息部分已****注释，换成自己的账号uin
-    uin = "MTE3MzE2NjAxOA=="  # 微信app登录用户的uin信息，也可以记做 MTE3Mz********%3D%3D
+    uin = "MTE3Mz********=="  # 微信app登录用户的uin信息，也可以记做 MTE3Mz********%3D%3D
 
     # 一个较长的公众号数据请求验证密钥 key, 有限时间内的单个公众号的密钥私密信息，下方的key只是样例
     key = "45382ee80ea507801b0ff835bc3c41487737f61a1b82cace7858864ed6439d79a82a11ae4e4132de29f92ee9670c8baf039647fcbefddc637adf0e2a94385ad6b540c18c4b16ea184a23e4fee0bac6d3"

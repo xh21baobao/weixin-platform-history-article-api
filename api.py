@@ -21,7 +21,8 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
     :param h_count: 历史图文发布的次数，一次是多图文，最大值10，即获取偏移量后最近10次发布的所有图文消息
     :return: 解析好的json格式字典
     """
-    def match_item_info(item_dict):
+
+    def match_item_info(item_dict, article_publish_time):
         """
         文章详情获取
         :param item_dict: 包含单个文章信息的字典
@@ -38,12 +39,14 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
         return {
             "article_title": article_title,  # 文章标题
             "article_author": article_author,  # 文章作者
+            "article_publish_time": article_publish_time,  # 文章发布时间
             "article_digest": article_digest,  # 文章摘要
             "article_content_url": article_content_url,  # 文章详情链接
             "article_cover_url": article_cover_url,  # 封面图片链接
             "article_source_url": article_source_url,  # 源文链接
             "article_copy_right": copy_right,  # 原创
         }
+
     uri_api = "http://mp.weixin.qq.com/mp/profile_ext"
     form_data = {
         "action": "getmsg",
@@ -73,12 +76,13 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
         if general_msg_list:
             general_msg_list = loads(general_msg_list, encoding="utf-8").get('list', [])
             for general_msg in general_msg_list:
+                publish_time = general_msg["comm_msg_info"].get("datetime", 0)
                 app_msg_ext_info = general_msg.get("app_msg_ext_info", {})
-                article_infos.append(match_item_info(app_msg_ext_info))
+                article_infos.append(match_item_info(app_msg_ext_info, publish_time))
 
                 item_list = general_msg.get('multi_app_msg_item_list', [])
                 for each_item in item_list:
-                    article_infos.append(match_item_info(each_item))
+                    article_infos.append(match_item_info(each_item, publish_time))
 
         else:
             status = 500
@@ -97,4 +101,3 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
         },
         "ending": ending  # 是否历史文章爬取完毕，依据offset
     }
-

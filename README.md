@@ -12,6 +12,36 @@
 2、biz 也就是 __biz ，获取方式在公众号历史消息链接里，复制公众号历史消息的链接，找到&__biz=xxx==&中xxx==部分，样例代码给的是人民日报的__biz
 
 
+### 调用api返回的json结果
+```angular2
+# api调用结果的字段描述
+api_result = 
+{
+    "status": status,  # api使用状态 200 正常，400请求错误
+    "biz": h_biz,  # 公众号__biz标识
+    "uin": h_uin,  # app登录用户的必要uin参数
+    "cur_offset": h_offset,  # 当前请求的偏移量
+    "next_offset": next_offset,  # 下一次请求的偏移量offset  status不为200时，会与cur_offset一致，用于调试
+    "key": h_key,  # api必备的app key
+    "results": {
+        "article_count": len(article_infos),  # 获取的文章数量
+        "article_infos": article_infos,  # 获取的全部文章信息
+    },
+    "ending": ending  # 是否历史文章爬取完毕，依据offset，可用于自定义增量爬取的结束条件
+}
+# 文章信息字段描述
+article_infos = [{
+    "article_title": article_title,  # 文章标题
+    "article_author": article_author,  # 文章作者
+    "article_publish_time": article_publish_time,  # 文章发布时间
+    "article_digest": article_digest,  # 文章摘要
+    "article_content_url": article_content_url,  # 文章详情链接
+    "article_cover_url": article_cover_url,  # 封面图片链接
+    "article_source_url": article_source_url,  # 源文链接
+    "article_copy_right": copy_right,  # 1原创  0非原创
+},]
+```
+
 #### 样例：simple_example.py
 ```angular2
 

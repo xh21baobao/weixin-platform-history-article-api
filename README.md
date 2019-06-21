@@ -29,7 +29,7 @@
 # api调用结果的字段描述
 api_result = 
 {
-    "status": status,  # api使用状态 200 正常，400请求错误
+    "status": status,  # api使用状态 200 正常
     "biz": h_biz,  # 公众号__biz标识
     "uin": h_uin,  # app登录用户的必要uin参数
     "cur_offset": h_offset,  # 当前请求的偏移量
@@ -81,5 +81,8 @@ if __name__ == '__main__':
 ```
 
 ### 赞助
+
+![image](https://github.com/xzkzdx/images/blob/master/B0A68029F4378AD2D625296986E9BA98.png)
+
 
 <img src="https://github.com/xzkzdx/images/blob/master/B0A68029F4378AD2D625296986E9BA98.png" height="240px" width="150px">

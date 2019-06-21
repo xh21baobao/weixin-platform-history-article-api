@@ -71,5 +71,4 @@ if __name__ == '__main__':
 ```
 
 ### 赞助
-
-![image](https://github.com/xzkzdx/image/blob/master/B0A68029F4378AD2D625296986E9BA98.png){:height="100" width="100"}
+<img src="https://github.com/xzkzdx/image/blob/master/B0A68029F4378AD2D625296986E9BA98.png" height="200px" width="100px">

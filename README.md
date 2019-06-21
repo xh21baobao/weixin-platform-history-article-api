@@ -1,5 +1,8 @@
 # WeChatPlatformArticle
 微信公众号历史文章爬取api
+@author：詹生松
+@api site: https://github.com/xzkzdx/WeChatPlatformArticle
+
 
 ### 所需工具
 1、环境依赖：建议使用 python3
@@ -66,3 +69,7 @@ if __name__ == '__main__':
     print(result)  # 获取的请求结果
 
 ```
+
+### 赞助
+
+![image](https://github.com/xzkzdx/image/blob/master/B0A68029F4378AD2D625296986E9BA98.png)

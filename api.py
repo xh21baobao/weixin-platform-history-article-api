@@ -98,27 +98,3 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
         "ending": ending  # 是否历史文章爬取完毕，依据offset
     }
 
-
-class Article:
-    def __init__(self):
-        pass
-
-
-class Platform:
-    def __init__(self, biz):
-        self.biz = biz
-
-
-class Fiddler:
-    def __init__(self):
-        pass
-
-
-if __name__ == '__main__':
-    biz = "MjM5MTAxNjY4MA=="
-    uin = "MTE3MzE2NjAxOA=="  # MTE3MzE2NjAxOA%3D%3D
-    key = "c47853a08ff0b5dfa2d8577abec94139b456b36e84fe805909478b9bd67354a9853abd97e1eb0ac53ab2ee9dccfcfec938e58069028f0d588972db2374137c0f1079a5779ef77afbe35c9a8c882a3117"
-    offset = "0"
-    count = "10"
-    result = get_history_api(biz, uin, key, offset, count)
-    print(result)

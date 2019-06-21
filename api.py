@@ -73,7 +73,7 @@ def get_history_api(h_biz, h_uin, h_key, h_offset, h_count):
             next_offset = h_offset
             status = 500
         general_msg_list = resp_json.get("general_msg_list", "")
-        if general_msg_list:
+        if general_msg_list and status == 200:
             general_msg_list = loads(general_msg_list, encoding="utf-8").get('list', [])
             for general_msg in general_msg_list:
                 publish_time = general_msg["comm_msg_info"].get("datetime", 0)

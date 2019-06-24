@@ -79,9 +79,3 @@ if __name__ == '__main__':
     print(result)  # 获取的请求结果
 
 ```
-
-### 赞助
-
-<img src="https://github.com/xzkzdx/images/blob/master/B0A68029F4378AD2D625296986E9BA98.png" height="260px" width="180px">
-
-<img src="https://github.com/xzkzdx/images/blob/master/65EEBFB0A26DAFE15D5CC8CCDB337889.png" height="240px" width="180px">
